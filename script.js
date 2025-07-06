@@ -2,7 +2,6 @@ function detectMood() {
   const input = document.getElementById("userInput").value.toLowerCase();
   const resultDiv = document.getElementById("result");
 
-  // Expanded emotion word lists for better accuracy
 const happyWords = [
   "happy", "great", "good", "awesome", "joy", "excited", "love", "fantastic", "wonderful", "amazing",
   "grateful", "smile", "positive", "delighted", "cheerful", "ecstatic", "glad", "satisfied", "peaceful", "hopeful",
@@ -24,7 +23,6 @@ const angryWords = [
 
   let happyScore = 0, sadScore = 0, angryScore = 0;
 
-  // Count occurrences of each emotion word
   const words = input.split(/\s+/);
   for (let word of words) {
     if (happyWords.includes(word)) happyScore++;
@@ -32,7 +30,6 @@ const angryWords = [
     if (angryWords.includes(word)) angryScore++;
   }
 
-  // Final decision logic
   let moodEmoji = "😐";
   let sentiment = "Neutral";
   let confidence = "Low";
